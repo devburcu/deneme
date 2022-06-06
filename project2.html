@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QNB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        .qnb {
+            width: 1140px;
+            height: 592px;
+            margin: auto;
+        }
+
+        .container {
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 15px;
+            padding-left: 15px;
+            width: 1140px;
+        }
+
+        .anasayfa-image {
+            position: absolute;
+            width: 980px;
+            height: 592px;
+            background: url(images/header_belt.png) no-repeat right top -2px;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            margin-left: -1276px;
+        }
+
+        .anasayfa-image:before {
+            content: "";
+            position: absolute;
+            left: -163%;
+            background: #fff;
+            width: 163%;
+            height: 100%;
+        }
+
+        .navbar {
+            position: relative;
+            width: 100%;
+        }
+        .navbar .container{
+            height: 150px;
+        }
+
+        .qnb-logo {
+            float: left;
+            z-index: 5;
+            width: 30%;
+            height: 150px;
+        }
+
+        .header-logo {
+            z-index: 5;
+            margin-top: 48px;
+            height: 48px;
+            position: relative;
+        }
+
+
+        .navbar-right-top {
+            float: right;
+        }
+
+        .navbar-right {
+            float: right;
+            width: 70%;
+        }
+
+        .navbar-right ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar-right ul li {
+            padding-right: 30px;
+            margin-top: 15px;
+        }
+
+        .navbar-right ul li a {
+            font-size: 15px;
+            color: rgb(0, 15, 51, .8);
+            font-weight: 400;
+        }
+
+        .navbar-right ul li a span:hover {
+            border-bottom: 1px solid rgb(0, 15, 51, .8);
+        }
+
+        .ust-linkler {
+            float: right;
+        }
+
+        .fa-angle-down {
+            padding-left: 7px;
+        }
+
+        .navbar-right-center {
+            float: right;
+            border-top: 1px solid #870052;
+            display: flex;
+            margin-top: 15px;
+            width: 85%;
+        }
+
+        .navbar-right-center ul li a {
+            font-size: 20px;
+            font-weight: 700;
+            font-family: serif;
+        }
+
+        .navbar-right-center ul li a:hover {
+            border: none;
+        }
+
+        .navbar-right-center i {
+            padding-top: 15px;
+            font-size: 21px;
+        }
+
+        .online-islemler ul li a {
+            font-size: 20px;
+            font-weight: 100;
+            color: white;
+        }
+
+        .online-islemler ul li {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: 0;
+            padding-left: 55px;
+            margin-left: 47px;
+            padding-bottom: 15px;
+            background: #870052;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+
+        }
+
+        .online-islemler .fa-angle-down:before {
+            color: white;
+        }
+
+        .navbar-right-bottom {
+            height: 48px;
+            position: relative;
+            float: right;
+            padding-top: 9px;
+            display: block;
+            width: 250px;
+            text-align: center;
+        }
+
+        .password-link {
+            font-style: normal;
+            text-align: center;
+            border-bottom: 2px solid #000f33;
+            line-height: 1;
+            z-index: 9;
+            color: rgba(0, 15, 51, .8);
+            font-weight: 400;
+            position: relative;
+
+        }
+
+        .navbar-right-bottom a {
+            font-style: normal;
+            text-align: center;
+            border-bottom: 2px solid rgba(29, 37, 82, .3);
+            line-height: 1;
+            z-index: 9;
+            color: rgba(0, 15, 51, .8);
+            font-weight: 400;
+            position: relative;
+
+        }
+
+        .navbar-right-bottom a:after {
+            content: "";
+            position: absolute;
+            width: 100% !important;
+            height: 2px !important;
+            bottom: -2px !important;
+            left: 0 !important;
+            background: #000f33;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: .2s linear;
+            top: auto;
+        }
+
+        .navbar-right-bottom a:hover:after {
+            transform: scaleX(1);
+        }
+
+        .navbar-right ul li .altcizgisiz:hover {
+            border-bottom: none;
+        }
+
+        .navbar-right-center ul .menu-li a {
+            color: #000f33;
+        }
+
+        .sayfa1-ici {
+            width: 550px;
+        }
+
+        .sayfa1 {
+            z-index: 10;
+            position: absolute;
+            width: 19%;
+            font-size: 35px;
+        }
+
+        .fa-angle-right {
+            position: relative;
+            font-size: 45px;
+            color: #9e3232;
+        }
+
+        .sol-yazi {
+            width: 85%;
+        }
+
+        .sol-yazi a {
+
+            font-size: 24px;
+            position: absolute;
+            left: 45px;
+            padding-top: 7px;
+            color: #000f33;
+        }
+
+        .sol-yazi a:hover {
+            color: #870052;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        .isaretler span {
+            font-size: 43px;
+            font-weight: 900;
+            font-family: system-ui;
+            position: relative;
+            bottom: 7px;
+        }
+
+        .fa-circle-pause {
+            font-size: 24px;
+            margin-left: 10px;
+            bottom: -5px;
+            top: -2px;
+            cursor: pointer;
+        }
+
+        .fa-circle-pause:hover {
+            color: rgb(3, 3, 171);
+        }
+
+        .isaretler {
+            margin-top: 100px;
+            width: 500px;
+        }
+
+        .isaretler a {
+            border-bottom: 2px solid rgba(29, 37, 82, .3);
+            color: rgba(0, 15, 51, .8);
+            font-weight: 400;
+            position: relative;
+            top: -8px;
+        }
+
+        .isaretler a:after {
+            content: "";
+            position: absolute;
+            width: 100% !important;
+            height: 2px !important;
+            bottom: -2px !important;
+            left: 0 !important;
+            background: #000f33;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: .2s linear;
+            top: auto;
+        }
+
+        .isaretler a:hover {
+            color: #000f33;
+        }
+
+        .isaretler a:hover:after {
+            transform: scaleX(1);
+        }
+
+        .sag-odeme {
+            position: absolute;
+            top: 0;
+            left: 580px;
+            margin-left: 300px;
+            width: 260px;
+            max-height: 460px;
+            z-index: 7;
+            background: #fff;
+            border-radius: 5px;
+            padding: 0 20px 20px 20px;
+        }
+
+        .ihtiyac-kredisi span {
+            color: #870052;
+            padding: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .ihtiyac-kredisi {
+            margin-bottom: 10px;
+        }
+
+        .kutu {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            border: 1px solid rgb(235, 234, 234);
+            border-radius: 5px;
+        }
+
+        .tutar {
+            font-size: 14px;
+            line-height: 24px;
+            height: 36px;
+            padding: 10px;
+        }
+
+        .rakam {
+            font-size: 18px;
+            line-height: 36px;
+            height: 36px;
+            padding: 0 10px;
+            color: #000f33;
+            font-weight: 600;
+        }
+
+        .kutu .fa-angle-down {
+            font-size: 24px;
+            padding-right: 10px;
+            line-height: 36px;
+            color: #870052;
+        }
+
+        .tutarlar {
+            border-bottom: 1px solid #d8d8d8;
+            height: 45px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tutarlar:last-child {
+            border: none;
+        }
+
+        .row-text {
+            font-size: 12px;
+            line-height: 36px;
+            color: #898787;
+        }
+
+        .row-text1 {
+            font-size: 12px;
+            line-height: 16px;
+            color: #898787;
+            width: 40%;
+        }
+
+        .ikinci-row a {
+            font-style: normal;
+            text-align: center;
+            border-bottom: 2px solid rgba(135, 0, 82, .3);
+            line-height: 1;
+            z-index: 9;
+            color: #870052;
+            font-weight: 400;
+            position: relative;
+            font-size: 16px;
+        }
+
+        .ikinci-row a:after {
+            content: "";
+            position: absolute;
+            width: 100% !important;
+            height: 2px !important;
+            bottom: -2px !important;
+            left: 0 !important;
+            background: #870052;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: .2s linear;
+            top: auto;
+        }
+
+        .ikinci-row a:hover:after {
+            transform: scaleX(1);
+        }
+
+        .ikinci-row {
+            text-align: center;
+            margin-top: -15px;
+        }
+
+        .ucuncu-row p {
+            color: rgb(57, 64, 64, .7);
+            font-size: 13px;
+            letter-spacing: -.04em;
+        }
+
+        .son-row {
+            font-size: 22px;
+            margin-top: 20px;
+        }
+
+        .son-row a {
+            color: #fff;
+            background: #870052;
+            padding: 12px 33px;
+
+        }
+
+        .son-row .fa-angle-right {
+            font-size: 24px;
+            color: #fff;
+            padding-left: 5px;
+
+        }
+
+        h3 {
+            margin-bottom: 34px;
+            font-size: 2rem;
+            padding-top: 40px;
+            font-weight: 100;
+        }
+
+        .sayfa2 {
+            background-color: #1170c4;
+
+        }
+
+        .sayfa2-ici {
+            height: 630px;
+            background: url(/images/2.png), -webkit-linear-gradient(left, #1170c4 10%, #000f33 55%);
+            background-repeat: no-repeat;
+            background-position: calc(50% + 436px) top;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            transform: inherit;
+            background-size: auto;
+            padding: 0 15px;
+            color: rgb(248, 249, 250);
+        }
+
+        .sayfa2-ici .container ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .sayfa4 {
+            background-color: #030e34;
+
+        }
+
+        .sayfa4-ici {
+            height: 630px;
+            background: url(/images/4.png), -webkit-linear-gradient(left, #030e34 20%, #750052 70%);
+            background-repeat: no-repeat;
+            background-position: calc(50% + 405px) top;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            transform: inherit;
+            background-size: auto;
+            padding: 0 15px;
+            color: rgb(248, 249, 250);
+        }
+
+        .sayfa4-ici .container ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .active {
+            margin-bottom: 10px;
+            margin-right: 30px;
+            letter-spacing: 1px;
+            border-bottom: 2px solid white;
+        }
+
+        .active a {
+            color: white;
+
+        }
+
+        .passive {
+            letter-spacing: 1px;
+        }
+
+        .passive a {
+            color: #d8d8d8;
+            opacity: .7;
+        }
+
+        .passive a:hover {
+            color: #fff;
+            opacity: 1;
+
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 340px;
+        }
+
+        .content .fa-angle-left {
+            width: 5%;
+            font-size: 40px;
+        }
+
+        .bilgilendirme {
+            width: 40%;
+        }
+
+        h4 {
+            margin-left: 10px;
+            margin-bottom: 10px;
+            font-size: 22px;
+            letter-spacing: 1px;
+            width: 176px;
+
+        }
+
+        h4:hover {
+            border-bottom: 1px solid white;
+        }
+
+        .bilgilendirme p {
+            margin-left: 10px;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .bilgilendirme p a {
+            color: #d8d8d8;
+            opacity: .7;
+        }
+
+        .bilgilendirme h4 a {
+            color: white;
+            opacity: 1;
+        }
+
+        .bilgilendirme a:hover {
+            border-bottom: 1px solid #d8d8d8;
+        }
+
+        .bilgilendirme-fotosu {
+            width: 51%;
+        }
+
+        .bilgilendirme-fotosu img {
+            margin-left: 20px;
+        }
+
+        .content .fa-angle-right {
+            width: 5%;
+            color: white;
+            font-size: 40px;
+        }
+
+        .isaretler2 {
+            display: flex;
+            padding-bottom: 20px;
+        }
+
+        .ilk-span {
+            font-size: 36px;
+            font-weight: 900;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .son-span {
+            font-size: 36px;
+            font-weight: 900;
+            color: #d8d8d8;
+            opacity: .5;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-delay: 0.2s;
+            cursor: pointer;
+        }
+
+        .son-span:hover {
+            color: white;
+            opacity: 1;
+        }
+
+        .isaretler2>.fa-circle-pause {
+            margin-top: 24px;
+            margin-left: 10px;
+            color: #d8d8d8;
+            opacity: .5;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-delay: 0.2s;
+            position: relative;
+        }
+
+        .isaretler2>.fa-circle-pause:hover {
+            color: white;
+            opacity: 1;
+        }
+
+        .isaretler2 a {
+            letter-spacing: 1px;
+            font-size: 14px;
+            margin-top: 25px;
+            margin-left: 15px;
+            border-bottom: 1px solid #b5b3b36b;
+            color: #dddada;
+            font-weight: 400;
+            position: relative;
+        }
+
+        .isaretler2 a:after {
+            content: "";
+            position: absolute;
+            width: 100% !important;
+            height: 2px !important;
+            bottom: -2px !important;
+            left: 0 !important;
+            background: white;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: .2s linear;
+            top: auto;
+        }
+
+        .isaretler2 a:hover {
+            color: white;
+        }
+
+        .isaretler2 a:hover:after {
+            transform: scaleX(1);
+        }
+
+        .bilgilendirme-fotosu2 img {
+            width: 525px;
+        }
+
+
+
+        .sayfa3 h4 {
+            width: 342px;
+            margin-left: 0;
+            color: #1d2552;
+        }
+
+        .sayfa3 .h4-baslik a {
+            color: #1d2552;
+            opacity: 1;
+            font-size: 21px;
+
+        }
+
+        .sayfa3 h3 {
+            color: #1d2552;
+
+        }
+
+        .sayfa3 p {
+            margin-left: 0;
+
+        }
+
+        .sayfa3 .bilgilendirme p a {
+            color: #1d2552;
+            opacity: 1;
+            letter-spacing: 1.2px;
+            font-size: 17px;
+        }
+
+        .sayfa3 a:hover {
+            border-bottom: 1px solid #1d2552;
+        }
+
+        .sayfa3-ici {
+            background-image: url(/images/3.png);
+            background-repeat: no-repeat;
+            background-position: calc(50% + 385px) top;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            transform: inherit;
+            background-size: auto;
+            padding: 0 15px;
+            color: rgb(248, 249, 250);
+        }
+
+        .tum-projeler {
+            padding-bottom: 50px;
+            width: 1140px;
+            margin: auto;
+            padding-left: 10px;
+        }
+
+        .tum-projeler a {
+            font-style: normal;
+            text-align: center;
+            border-bottom: 2px solid rgba(198, 6, 81, .3);
+            margin-bottom: 10px;
+            line-height: 1;
+            z-index: 9;
+            color: #c60651;
+            font-weight: 400;
+            position: relative;
+
+        }
+
+        .tum-projeler a:after {
+            content: "";
+            position: absolute;
+            width: 100% !important;
+            height: 2px !important;
+            bottom: -2px !important;
+            left: 0 !important;
+            background: #c60651;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: .2s linear;
+            top: auto;
+        }
+
+        .tum-projeler a:hover {
+            border-bottom: 2px solid rgba(198, 6, 81, .3);
+        }
+
+        .tum-projeler a:hover:after {
+            transform: scaleX(1);
+        }
+
+        .sayfa4 h4 {
+            width: 320px;
+            color: white;
+            opacity: 1;
+        }
+
+        .sayfa5-ici {
+            background-image: url(/images/5-1.png);
+            background-repeat: no-repeat;
+            background-position: calc(50% + 350px) top;
+        }
+
+        .piyasa-verileri-duyurular {
+            display: flex;
+            justify-content: space-between;
+            font-size: 22px;
+            padding-top: 50px;
+            color: #1d2552;
+        }
+
+        .piyasa-verileri {
+            width: 75%;
+            font-weight: 700;
+        }
+
+        .duyurular {
+            width: 25%;
+            font-weight: 700;
+        }
+
+        .fiyatlar {
+            width: 75%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ok-rakam {
+            display: flex;
+            position: relative;
+        }
+
+        .fiyatlar-destek {
+            display: flex;
+            margin-top: 30px;
+            color: #1d2552;
+        }
+
+        .destek {
+            width: 25%;
+            font-size: 20px;
+        }
+
+        .fa-caret-up {
+            color: rgb(23, 197, 23);
+            font-size: 20px;
+        }
+
+        .ok-rakamlari {
+            position: absolute;
+            left: 18px;
+        }
+
+        .buyuk {
+            font-size: 26px;
+        }
+
+        .soluk {
+            font-size: 18px;
+            opacity: .5;
+            margin-top: 20px;
+        }
+
+        .son-guncelleme-pause {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+        }
+
+        .son-guncelleme {
+            width: 75%;
+            margin-bottom: 30px;
+        }
+
+        .pause {
+            display: flex;
+            align-items: center;
+            width: 25%;
+        }
+
+        .fa-minus {
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .fa-minus:first-child {
+            color: rgb(189, 8, 8);
+        }
+        .fa-minus:not(:first-child):hover{
+            color: #15299a;
+
+        }
+
+        .kutu-1 {
+            width: 25%;
+            display: grid;
+            margin-right: 25px;
+            margin-top: 20px;
+        }
+
+        .kutu-2 {
+            width: 25%;
+            display: grid;
+            margin-right: 25px;
+            margin-top: 20px;
+        }
+
+        .kutu-3 {
+            width: 25%;
+            display: grid;
+            margin-right: 25px;
+            margin-top: 20px;
+        }
+
+        .kutu-4 {
+            width: 25%;
+            display: grid;
+            height: 176px;
+            margin-top: 25px;
+        }
+
+        .footer {
+            margin-top: -40px;
+        }
+
+        .footer-ici {
+            margin: 40px 0;
+            display: flex;
+            background-image: url(/images/5-2.png);
+            background-repeat: no-repeat;
+            background-position: calc(50% + 390px) top;
+        }
+
+        .kutu-1 a {
+            font-size: 18px;
+            padding-top: 11px;
+            padding-bottom: 9px;
+            text-decoration: none;
+            color: #1d2552;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+        }
+
+        .kutu-1 a span:hover {
+            border-bottom: 1px solid #1d2552;
+        }
+
+        .kutu-1 a:last-child {
+            border-bottom: none;
+        }
+
+        .kutu-2 a {
+            font-size: 18px;
+            padding-top: 11px;
+            padding-bottom: 9px;
+            text-decoration: none;
+            color: #1d2552;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+        }
+
+        .kutu-2 a span:hover {
+            border-bottom: 1px solid #1d2552;
+        }
+
+        .kutu-2 a:last-child {
+            border-bottom: none;
+        }
+
+        .kutu-3 a {
+            font-size: 18px;
+            padding-top: 11px;
+            padding-bottom: 9px;
+            text-decoration: none;
+            color: #1d2552;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+        }
+
+        .kutu-3 a span:hover {
+            border-bottom: 1px solid #1d2552;
+        }
+
+        .kutu-3 a:last-child {
+            border-bottom: none;
+        }
+
+        .basvuru-merkezi {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+            color: #1d2552;
+        }
+
+        .basvuru-merkezi a {
+            color: #1d2552;
+            font-weight: 600;
+        }
+
+        .basvuru-merkezi i {
+            font-size: 36px;
+        }
+
+        .basvuru-merkezi a span:hover {
+            border-bottom: 1px solid #030e34;
+        }
+
+        .telefon-bankaciligi {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 24px;
+        }
+
+        .telefon-bankaciligi a {
+            color: #1d2552;
+            font-weight: 600;
+        }
+
+        .telefon-bankaciligi a span:hover {
+            border-bottom: 1px solid #030e34;
+        }
+
+        .telefon-bankaciligi i {
+            font-size: 36px;
+        }
+
+        .bottom {
+            padding: 30px 0;
+            background: white;
+        }
+
+        .bottom-ici {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bottom1 {
+            display: flex;
+        }
+
+        .bottom1 p {
+            color: rgba(0, 15, 51, .8);
+            padding-right: 15px;
+        }
+
+        .sag-cizgi {
+            border-right: 1px solid rgba(125, 125, 125, 0.5);
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .bizeulasin-sss-kvk {
+            line-height: 30px;
+            height: 30px;
+        }
+
+        .bottom1 a {
+            border-bottom: 2px solid rgba(29, 37, 82, .3);
+            color: rgba(0, 15, 51, .8);
+            font-weight: 400;
+            position: relative;
+            margin-left: 15px;
+        }
+
+
+        .bottom1 a:after {
+            content: "";
+            position: absolute;
+            width: 100% !important;
+            height: 2px !important;
+            bottom: -2px !important;
+            left: 0 !important;
+            background: #000f33;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: .2s linear;
+            top: auto;
+        }
+
+        .bottom1 a:hover {
+            color: #000f33;
+        }
+
+        .bottom1 a:hover:after {
+            transform: scaleX(1);
+        }
+
+        .bottom2 {
+            margin-right: 50px;
+        }
+
+        .bottom2 a {
+            color: #000f33;
+        }
+
+        .bottom2 i {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .fa-facebook-f:hover {
+            color: #23527c;
+        }
+
+        .fa-twitter:hover {
+            color: #337ab7;
+        }
+
+        .fa-youtube:hover {
+            color: #ce332e;
+        }
+
+        .fa-instagram:hover {
+            color: #bb388f;
+        }
+
+        .fa-linkedin-in:hover {
+            color: #007bb6;
+        }
+    </style>
+</head>
+
+<body style="background: rgb(236, 236, 236 , 60%);">
+    <div class="arkaplan">
+        <div class="qnb">
+            <div class="anasayfa">
+                <div class="anasayfa-ici">
+                    <div class="anasayfa-image"></div>
+                </div>
+            </div>
+            <div class="navbar">
+
+                <div class="container">
+                    <div class="qnblogo">
+
+                        <a href="https://www.qnbfinansbank.com/" class="qnb-logo">
+                            <img src="/images/logo.png" class="header-logo" alt="">
+                        </a>
+                        <div class="navbar-right">
+                            <div class="navbar-right-top">
+                                <div class="ust-linkler">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-thin fa-magnifying-glass"></i>
+                                            <a href="https://www.qnbfinansbank.com/yasal/urun-hizmet-ucretleri">
+                                                <span>
+                                                    Ürün ve Hizmet Ücretleri
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.qnbfinansbank.com/yasal/sube-ve-atm">
+                                                <span>
+                                                    ATM ve Şubeler
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="altcizgisiz" href="#">Türkiye</a>
+                                            <i class="fa fa-thin fa-angle-down"></i>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.qnbfinansbank.com/en/">
+                                                <span>
+                                                    English
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="navbar-right-center">
+                                <ul>
+                                    <li class="menu-li">
+                                        <a href="#">Bireysel</a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li class="menu-li">
+                                        <a href="#">KOBİ</a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li class="menu-li">
+                                        <a href="#">Ticari/Kurumsal</a>
+                                    </li>
+    
+                                </ul>
+                                <i class="fa fa-thin fa-magnifying-glass"></i>
+                                <div class="online-islemler">
+                                    <ul>
+                                        <li>
+                                            <a href="#">Online İşlemler</a>
+                                            <i class="fa fa-thin fa-angle-down"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="navbar-right-bottom">
+                                <a href="https://finanssifre.qnbfinansbank.com/Default.aspx">FinansŞifre Al</a>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+
+                </div>
+            </div>
+
+            <div class="sayfa1">
+                <div class="container">
+                    <div class="sayfa1-ici">
+                        <div class="sol-yazi">
+                            <h2>e-Dönüşüm ürünleri Dijital Köprü'de 2022'de de Ücretsiz!</h2>
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a
+                                href="https://www.qnbfinansbank.com/bireysel/birikim/bol-kazanc-icin/kur-korumali-tl-vadeli-mevduat-hesabi?ref=aba">Detaylı
+                                Bilgi</a>
+                            <div class="isaretler">
+                                <i class="fa-solid fa-minus"></i>
+
+                                <i class="fa-solid fa-minus"></i>
+
+                                <i class="fa-solid fa-minus"></i>
+
+                                <i class="fa-solid fa-minus"></i>
+
+                                <i class="fa-solid fa-minus"></i>
+                                <i class="fa-regular fa-circle-pause"></i>
+                                <a href="https://www.qnbfinansbank.com/kampanyalar">Tüm Kampanyalar</a>
+                            </div>
+                        </div>
+
+                        <div class="sag-odeme">
+                            <div class="ihtiyac-kredisi"><span> İhtiyaç Kredisi</span></div>
+
+                            <div class="row">
+                                <div class="ilk-row">
+                                    <div class="kutucuk">
+                                        <div class="kutucuk-ici">
+                                            <div class="kutu">
+                                                <div class="tutar">Tutar</div>
+                                                <div class="rakam">30.000 TL</div>
+                                            </div>
+                                            <div class="kutu">
+                                                <div class="rakam">36 Ay</div>
+                                                <i class="fa fa-thin fa-angle-down"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kutucuk">
+                                        <div class="kutucuk-ici">
+                                            <div class="tutarlar">
+                                                <div class="row-text">Taksit Tutarı</div>
+                                                <div class="rakam">1.252 TL</div>
+                                            </div>
+                                            <div class="tutarlar">
+                                                <div class="row-text">Aylık Faiz Oranı*</div>
+                                                <div class="rakam">%1,99</div>
+                                            </div>
+                                            <div class="tutarlar">
+                                                <div class="row-text1">Toplam Geri Ödeme Tutarı</div>
+                                                <div class="rakam">45.056 TL</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="ikinci-row">
+                                    <a href="https://www.qnbfinansbank.com/bireysel-ihtiyac-kredisi">Detaylı Bilgi</a>
+                                </div>
+                                <div class="ucuncu-row">
+                                    <p>*Yeni müşterilere özel sunulan faiz oranıdır. Müşteri özelinde değişiklik
+                                        gösterebilir.
+                                    </p>
+                                </div>
+                                <div class="son-row">
+                                    <a
+                                        href="https://www.qnbfinansbank.com/bireysel-ihtiyac-kredisi?ref=anasayfahesaplama#kredi_basvuru">Hemen
+                                        Başvur
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section aria-labelledby="sayfa2" class="sayfa2" text-white>
+
+            <div class="sayfa2-ici">
+                <div class="container">
+
+                    <h3>Başvuru Merkezi</h3>
+                    <ul>
+                        <li class="active">
+                            <a href="#">Bireysel</a>
+                        </li>
+                        <li class="passive">
+                            <a href="https://www.qnbfinansbank.com/#kobi">KOBİ</a>
+                        </li>
+                    </ul>
+
+                    <div class="content">
+                        <i class="fa-solid fa-angle-left"></i>
+                        <div class="bilgilendirme">
+                            <h4 class="h4-baslik"><a href="">Kredi Başvurusu</a></h4>
+                            <p>
+                                <a href="https://www.qnbfinansbank.com/bireysel-ihtiyac-kredisi"> Nakit ihtiyaçlarınız
+                                    için size en uygun krediye, dilediğiniz kanaldan
+                                    kolayca başvurun!</a>
+                            </p>
+                        </div>
+                        <div class="bilgilendirme-fotosu">
+                            <img src="/images/alisveris-5c7d4818-ec34-426e-9dca-689d1e77bb81.webp" alt="">
+                        </div>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="isaretler2">
+                        <div class="spans">
+                            <span class="ilk-span"> _ </span>
+                            <span class="son-span"> _ </span>
+                        </div>
+                        <i class="fa-regular fa-circle-pause"></i>
+                        <a href="https://www.qnbfinansbank.com/kampanyalar">Tüm Başvurular</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="sayfa3">
+            <div class="sayfa3-ici">
+                <div class="container">
+                    <h3>Kurumsal Sosyal Sorumluluk ve Sponsorluklar</h3>
+                    <div class="content">
+                        <div class="bilgilendirme">
+                            <h4 class="h4-baslik">
+                                <a
+                                    href="https://www.qnbfinansbank.com/qnb-finansbanki-taniyin/kurumsal-sosyal-sorumluluk/minik-eller-buyuk-hayaller/minik-eller-kod-yaziyor">Minik
+                                    Eller Scratch Cup 2022'de Doğayı Kurtarmak için
+                                    Kodladı</a>
+                            </h4>
+                            <p>
+                                <a
+                                    href="https://www.qnbfinansbank.com/qnb-finansbanki-taniyin/kurumsal-sosyal-sorumluluk/minik-eller-buyuk-hayaller/minik-eller-kod-yaziyor">Yapılan
+                                    değerlendirmeler sonucu büyük finale kalan 10 takım, 2 Mart Çarşamba
+                                    günü online gerçekleşen Scratch Cup 2022 final etabında oyunlarını sergiledi.</a>
+                            </p>
+
+                        </div>
+                        <div class="bilgilendirme-fotosu2">
+                            <img src="/images/QNB-22086-SCRATCH-CUP-2022-1000x600-930706ca-0fac-4dfa-9aa9-e93673e5213a.webp"
+                                alt="">
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="tum-projeler">
+                    <a href="https://www.qnbfinansbank.com/qnb-finansbanki-taniyin/kurumsal-sosyal-sorumluluk">Tüm
+                        Projeler</a>
+                </div>
+            </div>
+        </div>
+        <section aria-labelledby="sayfa4" class="sayfa4" text-white>
+
+            <div class="sayfa4-ici">
+                <div class="container">
+
+                    <h3>Kampanyalar</h3>
+
+                    <div class="content">
+                        <i class="fa-solid fa-angle-left"></i>
+                        <div class="bilgilendirme">
+                            <h4 class="h4-baslik"><a href="">7/24 Bankacılık Kampanyaları</a></h4>
+                            <p>
+                                <a href="https://www.qnbfinansbank.com/kampanyalar/724-kampanyalari"> QNB Mobil
+                                    üzerinden her ihtiyacınıza uygun fırsatlar için tıklayın!</a>
+                            </p>
+                        </div>
+                        <div class="bilgilendirme-fotosu">
+                            <img src="/images/ana-sayfa1-6d7623de-08d3-440c-a015-4bc3c7d0f19f.webp" alt="">
+                        </div>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="isaretler2">
+                        <div class="spans">
+                            <span class="ilk-span"> _ </span>
+                            <span class="son-span"> _ </span>
+                        </div>
+                        <i class="fa-regular fa-circle-pause"></i>
+                        <a href="https://www.qnbfinansbank.com/kampanyalar">Tüm Kampanyalar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section aria-labelledby="sayfa5" class="sayfa5">
+            <div class="container">
+                <div class="sayfa5-ici">
+                    <div class="piyasa-verileri-duyurular">
+                        <div class="piyasa-verileri">Piyasa Verileri</div>
+                        <div class="duyurular">Duyurular</div>
+                    </div>
+                    <div class="fiyatlar-destek">
+                        <div class="fiyatlar">
+                            <div class="bist100">
+                                <p>BIST100</p>
+                                <p class="buyuk">2519,34</p>
+                                <div class="ok-rakam">
+                                    <i class="fa-solid fa-caret-up"></i>
+                                    <p class="ok-rakamlari">3,30</p>
+                                </div>
+                            </div>
+                            <div class="usd">
+                                <p>USD</p>
+                                <p class="buyuk">16,3872</p>
+                                <div class="ok-rakam">
+                                    <i class="fa-solid fa-caret-up"></i>
+                                    <p class="ok-rakamlari">1,02</p>
+                                </div>
+                            </div>
+                            <div class="eur">
+                                <p>EUR</p>
+                                <p class="buyuk">17,6541</p>
+                                <div class="ok-rakam">
+                                    <i class="fa-solid fa-caret-up"></i>
+                                    <p class="ok-rakamlari">1,40</p>
+                                </div>
+                            </div>
+                            <div class="gbp">
+                                <p>GBP</p>
+                                <p class="buyuk">20,7226</p>
+                                <div class="ok-rakam">
+                                    <i class="fa-solid fa-caret-up"></i>
+                                    <p class="ok-rakamlari">1,11</p>
+                                </div>
+                            </div>
+                            <div class="altin">
+                                <p>ALTIN(ONS)</p>
+                                <p class="buyuk">1.855,58</p>
+                                <div class="ok-rakam">
+                                    <i class="fa-solid fa-caret-up"></i>
+                                    <p class="ok-rakamlari">0,09</p>
+                                </div>
+                            </div>
+                            <div class="bos-kutu"></div>
+                        </div>
+                        <div class="destek">
+                            <p>Referans Faiz Oranları (IBOR) Reformu</p>
+                            <p class="soluk">16.06.2021</p>
+                        </div>
+                    </div>
+                    <div class="son-guncelleme-pause">
+
+                        <div class="son-guncelleme">
+
+                            <p class="soluk">Son Güncelleme: 30.05.2022 14:18:36</p>
+
+                        </div>
+
+                        <div class="pause">
+
+                            <i class="fa-solid fa-minus"></i>
+                            <i class="fa-solid fa-minus"></i>
+                            <i class="fa-solid fa-minus"></i>
+                            <i class="fa-solid fa-minus"></i>
+                            <i class="fa-solid fa-minus"></i>
+                            <i class="fa-regular fa-circle-pause"></i>
+
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <div class="footer">
+
+            <div class="container">
+
+                <div class="footer-ici">
+
+                    <div class="kutu-1">
+
+                        <a href="https://www.qnbfinansbank.com/724-bankacilik"><span>7/24 Bankacılık</span></a>
+                        <a href="https://www.qnbfinansbank.com/satilik-gayrimenkuller"><span>Satılık
+                                Gayrimenkuller</span></a>
+                        <a href="https://www.qnbfinansbank.com/yatirimci-iliskileri"><span>Yatırımcı
+                                İlişkileri</span></a>
+                        <a href="https://www.qnbfinansbank.com/destek/sozlesmeler"><span>Sözleşmeler</span></a>
+                        <a href="https://www.qnbfinansbank.com/tasit-otomobil-kredisi"><span>Taşıt Kredisi</span></a>
+                        <a href="https://www.qnbfinansbank.com/cardfinans-kredi-karti"><span>Kredi Kartı</span></a>
+
+                    </div>
+
+                    <div class="kutu-2">
+
+                        <a href="https://www.qnbfinansbank.com/qnb-finansbanki-taniyin"><span>Bizi Tanıyın</span></a>
+                        <a href="https://www.qnbfinansbank.com/insan-kaynaklari"><span>İnsan Kaynakları</span></a>
+                        <a href="https://e-sirket.mkk.com.tr/esir/Dashboard.jsp#/sirketbilgileri/10173"><span>Bilgi
+                                Toplumu
+                                Hizmetleri</span></a>
+                        <a href="https://www.qnbfinansbank.com/destek/gizlilik-politikasi"><span>Gizlilik
+                                Politikası</span></a>
+                        <a href="https://www.qnbfinansbank.com/standart-konut-kredisi"><span>Konut Kredisi</span></a>
+                        <a href="https://www.qnbfinansbank.com/vadeli-mevduat-urunleri"><span>Vadeli Hesap</span></a>
+
+                    </div>
+
+                    <div class="kutu-3">
+
+                        <a href="https://www.qnbfinansbank.com/destek/iletisim"><span>İletişim</span></a>
+                        <a href="https://www.qnbfinansbank.com/destek/kullanim-kosullari"><span>Kanallar Kullanım
+                                Koşulları</span></a>
+                        <a href="https://www.qnbfinansbank.com/destek/zamanasimi"><span>Zamanaşımı</span></a>
+                        <a href="https://www.qnbfinansbank.com/bireysel-ihtiyac-kredisi"><span>İhtiyaç
+                                Kredisi</span></a>
+                        <a href="https://www.qnbfinansbank.com/kredi-hesaplama-araci"><span>Kredi Hesaplama</span></a>
+                        <a href="https://www.qnbfinansbank.com/site-haritasi"><span>Site Haritası</span></a>
+
+                    </div>
+
+                    <div class="kutu-4">
+                        <div class="basvuru-merkezi">
+                            <a href="https://www.qnbfinansbank.com/basvuru-merkezi">
+                                <span>Başvuru
+                                    <br>
+                                    Merkezi</span>
+                            </a>
+                            <i class="fa-regular fa-circle-check"></i>
+                        </div>
+                        <div class="telefon-bankaciligi">
+                            <a href="https://www.qnbfinansbank.com/destek/cagri-merkezi">
+                                <span>Telefon Bankacılığı
+                                    <br>
+                                    0 850 222 0 900</span>
+                            </a>
+                            <i class="fa-solid fa-headphones"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="footer-bottom-ici">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="bottom">
+            <div class="container">
+                <div class="bottom-ici">
+                    <div class="bottom1">
+                        <div class="sag-cizgi">
+                            <p>© 2022 QNB Finansbank A.Ş. </p>
+                        </div>
+                        <div class="bizeulasin-sss-kvk">
+                            <a href="https://www.qnbfinansbank.com/bize-ulasin/talep-ve-sikayetlerin-degerlendirilmesi">Bize
+                                Ulaşın</a>
+                            <a href="https://www.qnbfinansbank.com/sss">SSS</a>
+                            <a
+                                href="https://www.qnbfinansbank.com/bize-ulasin/kisisel-verilerinizin-korunmasi-hakkinda-bilgilendirme">Kişisel
+                                Verilerin Korunması</a>
+
+                        </div>
+
+                    </div>
+                    <div class="bottom2">
+
+                        <a href="https://www.facebook.com/qnbfinansbank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/qnbfinansbank"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/c/qnbfinansbank"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/?next=/qnbfinansbank/"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/qnb-finansbank/"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
