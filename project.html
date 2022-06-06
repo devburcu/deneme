@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablo3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans:wght@800&family=Oswald:wght@300&family=Quicksand:wght@700&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .container {
+            width: 1300px;
+            margin: 0 auto;
+
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .header {
+            background: rgb(50, 50, 165);
+            background-repeat: no-repeat;
+            color: rgba(999, 999, 999, .8);
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .option span {
+            padding: 12px;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .login {
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 10px 30px;
+            margin-right: 15px;
+            opacity: .8;
+        }
+
+        .job-post {
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 10px 30px;
+            color: rgb(63, 63, 188);
+            background: white;
+        }
+
+        .form-button {
+            padding: 10px 20px;
+            background: rgba(224, 158, 36, 0.84);
+            color: white;
+            width: 100px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid white;
+        }
+        .form-button:hover{
+            background: rgba(224, 158, 36, 0.6);
+        }
+
+        .user-login {
+            border-right: 1px solid rgba(66, 65, 65, 0.1);
+            width: 300px;
+            line-height: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .location {
+            padding-left: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .form {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .fa-magnifying-glass {
+            line-height: 3;
+            margin-right: 5px;
+            color: rgba(66, 65, 65, 0.4);
+
+        }
+
+        .fa-location-dot {
+            color: rgba(66, 65, 65, 0.4);
+        }
+
+        .user-login span {
+            color: rgba(24, 24, 24, 0.823);
+            line-height: 3;
+        }
+
+        .location span {
+            color: rgba(24, 24, 24, 0.822);
+            line-height: 3;
+            margin-left: 5px;
+        }
+
+        .form-button {
+            margin-left: 30px;
+            width: 110px;
+        }
+
+        h1 {
+            width: 315px;
+            margin-top: 150px;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .users {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 150px;
+            margin-bottom: 50px;
+        }
+
+        .upload {
+            padding-top: 20px;
+        }
+
+        .main-page {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main-page-right {
+            position: relative;
+        }
+        .main-page-right img{
+            position: absolute;
+    right: -180px;
+    top: 25px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 60px;
+
+        }
+
+        h2 {
+            padding-top: 70px;
+            padding-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .title span {
+            color: rgba(30, 30, 30, 0.5);
+        }
+
+        .second-page-photos {
+            display: flex;
+            justify-content: space-around;
+            margin: 120px 0;
+
+        }
+
+        .second-page-photo {
+            width: 30%;
+            text-align: center;
+        }
+
+        .second-page-photo img {
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            margin: 10px;
+            font-weight: 900;
+
+        }
+
+        .second-page-photo span {
+            color: rgba(30, 30, 30, 0.8);
+            font-size: 14px;
+        }
+
+        .second-page-photo:first-child {
+            padding: 20px;
+            box-shadow: rgb(200 200 200 / 40%) 0 10px 30px 0;
+            border-radius: 10px;
+        }
+
+        .icons {
+            color: rgba(66, 65, 65, 0.4);
+            margin: 10px;
+            display: flex;
+        }
+
+        .icon i {
+            padding-right: 5px;
+        }
+
+        .icon span {
+            padding-right: 25px;
+        }
+
+        .list-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .list-photo img {
+            width: 65px;
+            margin-right: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: end;
+            margin-top: 15px;
+        }
+
+        .button {
+            margin: 10px;
+            border-radius: 25px;
+            padding: 5px 15px;
+        }
+
+        .button-green {
+            color: rgb(64, 113, 64);
+            background: rgba(64, 113, 64, .2);
+        }
+
+        .button-yellow {
+            color: rgb(250, 170, 0);
+            background: rgba(250, 170, 0, .2);
+        }
+
+        .button-blue {
+            color: rgb(25, 100, 200);
+            background: rgba(25, 100, 200, .2);
+        }
+
+        .fa-bookmark {
+            justify-content: end;
+            display: flex;
+            margin-right: 20px;
+        }
+
+        .list {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .blue-white-button {
+            width: 155px;
+            margin: 30px auto;
+            background: rgba(238, 238, 250, 0.803);
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: blue;
+            margin-bottom: 3px;
+        }
+
+        .in-third-page {
+            padding: 50px 0;
+        }
+
+        .forth-page-title {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .forth-page-photos {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 100px;
+        }
+
+        .fifth-page-buttons {
+            padding-bottom: 150px;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            width: 325px;
+            margin: 0 auto;
+        }
+
+        .fifth-page-white-button {
+            margin: 10px;
+            border-radius: 5px;
+            padding: 15px 25px;
+            color: blue;
+            background: white;
+        }
+
+        .fifth-page-orange-button {
+            margin: 10px;
+            border-radius: 5px;
+            padding: 15px 25px;
+            color: white;
+            background: rgba(224, 158, 36, 0.84);
+        }
+        .sixth-page-title{
+            display: flex;
+            justify-content: space-between;
+        }
+        .in-sixth-page{
+            padding-bottom: 100px;
+            border-bottom: 1px solid rgba(222, 220, 220, .2);
+        }
+        .sixth-page-boxes{
+            display: flex;
+            justify-content: space-between;
+        }
+        .box{
+            width: 25%;
+            text-align: center;
+            padding: 30px;
+            border: 1px solid rgba(222, 220, 220, .2);
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .dots{
+            padding-top: 50px;
+            text-align: center;
+            font-size: 7px;
+            color: grey;
+        }.fa-circle{
+            padding: 5px;
+        }
+        .option{
+            position: relative;
+            display: inline-block;
+        }
+        .option-button{
+            border: none;
+            cursor: pointer;
+            background: rgb(50, 50, 165);
+            color: white;
+            margin-right: 30px;
+        }
+        .subtitle{
+            display: none;
+            position: absolute;
+        }
+        .subtitle a{
+            text-decoration: none;
+            display: block;
+            color: white;
+            padding: 5px 0;
+            margin-top: 5px;
+        }
+        .subtitle a:hover{
+            color: grey;
+            background: rgb(50, 50, 160);
+        }
+        .option:hover .subtitle{
+            display: block;
+        }
+        .seventh-page-photos{
+            display: flex;
+            justify-content: space-between;
+        }
+        .seventh-page-photo{
+            margin-top: 50px;
+            margin-bottom: 80px;
+        }
+        .seventh-page-photo-text{
+            margin-top: 10px;
+        }
+        .seventh-page-photo-text span{
+            color: grey;
+            font-size: 12px;
+        }
+        .seventh-page-photo-text i{
+            font-size: 7px;
+        }
+        .seventh-page-photo-text h3{
+            margin: 0;
+        }
+        .seventh-page-photo img{
+            width: 400px;
+    border-radius: 10px;
+        }
+        .in-eighth-page{
+            display: flex;
+            justify-content: space-between;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div style="background-image: url(/images/bg-slider2.jpg);" class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-logo">
+                    <img src="/images/logo-white.png" alt="">
+                </div>
+                <div class="navbar-menu">
+                    <div class="option">
+                       <button class="option-button">Home
+                        <i class="fa fa-thin fa-angle-down"></i>
+                       </button>
+                           <div class="subtitle">
+                               <a href="#">Elma</a>
+                               <a href="#">Portakal</a>
+                               <a href="#">Armut</a>
+                               <a href="#">Muz</a>
+                           </div>
+                       
+                    </div>
+
+
+                    <div class="option">
+                        <button class="option-button">Find Jobs
+                         <i class="fa fa-thin fa-angle-down"></i>
+                        </button>
+                            <div class="subtitle">
+                                <a href="#">Elma</a>
+                                <a href="#">Portakal</a>
+                                <a href="#">Armut</a>
+                                <a href="#">Muz</a>
+                            </div>
+                        
+                     </div>
+
+                     <div class="option">
+                        <button class="option-button">Emplayers
+                         <i class="fa fa-thin fa-angle-down"></i>
+                        </button>
+                            <div class="subtitle">
+                                <a href="#">Elma</a>
+                                <a href="#">Portakal</a>
+                                <a href="#">Armut</a>
+                                <a href="#">Muz</a>
+                            </div>
+                        
+                     </div>
+
+                     <div class="option">
+                        <button class="option-button">Candidates
+                         <i class="fa fa-thin fa-angle-down"></i>
+                        </button>
+                            <div class="subtitle">
+                                <a href="#">Elma</a>
+                                <a href="#">Portakal</a>
+                                <a href="#">Armut</a>
+                                <a href="#">Muz</a>
+                            </div>
+                        
+                     </div>
+
+                     <div class="option">
+                        <button class="option-button">Blog
+                         <i class="fa fa-thin fa-angle-down"></i>
+                        </button>
+                            <div class="subtitle">
+                                <a href="#">Elma</a>
+                                <a href="#">Portakal</a>
+                                <a href="#">Armut</a>
+                                <a href="#">Muz</a>
+                            </div>
+                        
+                     </div>
+
+                     <div class="option">
+                        <button class="option-button">Pages
+                         <i class="fa fa-thin fa-angle-down"></i>
+                        </button>
+                            <div class="subtitle">
+                                <a href="#">Elma</a>
+                                <a href="#">Portakal</a>
+                                <a href="#">Armut</a>
+                                <a href="#">Muz</a>
+                            </div>
+                        
+                     </div>
+                </div>
+                <div class="navbar-right">
+                    <div class="login">
+                        <span>Login / Register</span>
+                    </div>
+                    <div class="job-post">
+                        <span>Job Post</span>
+                    </div>
+                </div>
+            </div>
+            <div class="main-page">
+
+                <div class="main-page-left">
+                    <h1>Find Your Perfect Job Match</h1>
+                    <span>Find Job, Employment & Career Opportunities</span>
+                    <div class="form">
+                        <div class="user-login">
+                            <i class="fa fa-thin fa-magnifying-glass"></i>
+                            <input style="border: none; width: 275px; height: 45px;" type="email" id="email" name="email" value size="60px" placeholder="jub title, keywords or company">
+                        </div>
+                        <div class="location">
+                            <i style="padding-right: 10px;" class="fa-solid fa-location-dot"></i>
+                            <input style="border: none; width: 240px; height: 45px;" type="email" id="email" name="email" value size="60px" placeholder="City or Postcode">
+                        </div>
+                       
+                        <button class="form-button" type="submit" name="submit">Find Jobs</button>
+                    </div>
+                    <span>Popular searches : Designer, Developer, Web, IOS, PHP, Senior, Engineer</span>
+                    <div class="users">
+                        <img src="/images/slider21.png" alt="">
+                        <div class="upload">
+                            <i class="fa-solid fa-file-arrow-up"></i>
+                            <span>Upload Your CV</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-page-right">
+                    <img src="/images/slider2.png" alt="">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="second-page">
+        <div class="container">
+            <div class="title">
+                <h2>How It Works?</h2>
+                <span>Job for anyone, anywhere</span>
+            </div>
+            <div class="second-page-photos">
+                <div class="second-page-photo">
+                    <img src="/images/f1.jpg" alt="">
+                    <h3>Free Resume Assessments</h3>
+                    <span>Employers on average spend 31 seconds scanning resumes to identify potential matches.</span>
+                </div>
+
+                <div class="second-page-photo">
+                    <img src="/images/f2.jpg" alt="">
+                    <h3>Job Fit Scoring</h3>
+                    <span>Our new fit meter shows you which jobs are most relevant to your skills and interests.</span>
+                </div>
+
+                <div class="second-page-photo">
+                    <img src="/images/f3.png" alt="">
+                    <h3>Help Every Step of the Way</h3>
+                    <span>Our career advice section is full of information to help you identify the right fit.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: rgb(238, 237, 248);" class="third-page">
+        <div class="container">
+            <div class="in-third-page">
+                <div class="title">
+                    <h2>Featured Jobs</h2>
+                    <span>Know your worth and find the job that qualify your life</span>
+                </div>
+                <div class="lists">
+                    <div class="list">
+                        <div class="list-left">
+                            <div class="list-photo">
+                                <img src="/images/y10.jpg" alt="">
+                            </div>
+                            <div class="list-title">
+                                <h3>Software Engineer (Android), Libraries</h3>
+                                <div class="icons">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-briefcase"></i>
+                                        <span>Segment</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>London, UK</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-clock"></i>
+                                        <span>11 hours ago</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-money-bills"></i>
+                                        <span>$35k - $45k</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-right">
+                            <i class="fa-regular fa-bookmark"></i>
+                            <div class="buttons">
+                                <div class="button button-green">Private</div>
+                                <div class="button button-yellow">Urgent</div>
+                                <div class="button button-blue">Full Time</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list-left">
+                            <div class="list-photo">
+                                <img src="/images/y2.jpg" alt="">
+                            </div>
+                            <div class="list-title">
+                                <h3>Recruiting Coordinator</h3>
+                                <div class="icons">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-briefcase"></i>
+                                        <span>Segment</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>London, UK</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-clock"></i>
+                                        <span>11 hours ago</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-money-bills"></i>
+                                        <span>$35k - $45k</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-right">
+                            <i class="fa-regular fa-bookmark"></i>
+                            <div class="buttons">
+                                <div class="button button-green">Private</div>
+                                <div class="button button-blue">Full Time</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list-left">
+                            <div class="list-photo">
+                                <img src="/images/y8.jpg" alt="">
+                            </div>
+                            <div class="list-title">
+                                <h3>Product Manager, Studio</h3>
+                                <div class="icons">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-briefcase"></i>
+                                        <span>Invision</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>London, UK</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-clock"></i>
+                                        <span>11 hours ago</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-money-bills"></i>
+                                        <span>$35k - $45k</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-right">
+                            <i class="fa-regular fa-bookmark"></i>
+                            <div class="buttons">
+                                <div class="button button-yellow">Urgent</div>
+                                <div class="button button-blue">Full Time</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list-left">
+                            <div class="list-photo">
+                                <img src="/images/download.jpg" alt="">
+                            </div>
+                            <div class="list-title">
+                                <h3>Web Developer</h3>
+                                <div class="icons">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-briefcase"></i>
+                                        <span>Upwork</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>London, UK</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-clock"></i>
+                                        <span>11 hours ago</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-money-bills"></i>
+                                        <span>$35k - $45k</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-right">
+                            <i class="fa-regular fa-bookmark"></i>
+                            <div class="buttons">
+                                <div class="button button-blue">Full Time</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list-left">
+                            <div class="list-photo">
+                                <img src="/images/y9.jpg" alt="">
+                            </div>
+                            <div class="list-title">
+                                <h3>Senior product Designer</h3>
+                                <div class="icons">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-briefcase"></i>
+                                        <span>Upwork</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>London, UK</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-clock"></i>
+                                        <span>11 hours ago</span>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-money-bills"></i>
+                                        <span>$35k - $45k</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-right">
+                            <i class="fa-regular fa-bookmark"></i>
+                            <div class="buttons">
+                                <div class="button button-blue">Full Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="third-page-bottom-button">
+                    <div style="background: blue; color: white;" class="blue-white-button">Load More Listing</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="forth-page">
+        <div class="container">
+            <div class="in-forth-page">
+                <div class="forth-page-title">
+                    <div style="text-align: left;" class="title">
+                        <h2>Featured Cities</h2>
+                        <span>Know your worth and find the job that qualify your life</span>
+                    </div>
+                    <a style="text-decoration: none;" href="#">Browse All Locations
+                        <i style="padding-left: 10px; padding-top: 110px;" class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="forth-page-photos">
+                <div style="width: 33%;" class="forth-page-first-line">
+                    <img style="border-radius: 10px;" src="/images/newyork.jpg" alt="">
+                    <div class="forth-page-first-line-text">
+
+                    </div>
+                </div>
+
+
+                <div style="width: 33%;" class="forth-page-second-line">
+                    <img src="/images/paris.jpg" alt="">
+                    <img style="margin-top: 25px;" src="/images/miami.jpg" alt="">
+                </div>
+
+                <div style="width: 33%;" class="forth-page-third-line">
+                    <img src="/images/london.jpg" alt="">
+                    <img style="margin-top: 25px;" src="/images/los.jpg" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div style="background-image: url(/images/bg_shape-1.jpg); background-repeat: no-repeat; width: 100%; background-size: cover;"
+        class="fifth-page">
+        <div class="container">
+            <div class="in-fifth-page">
+                <div style="text-align: center; color: white; padding-top: 70px;" class="fifth-page-title">
+                    <h2>Your Dream Jobs Are Waiting</h2>
+                    <span>Over 1 million interactions, 50.000 success Make yours now.</span>
+                </div>
+            </div>
+            <div class="fifth-page-buttons">
+                <div class="fifth-page-white-button">
+                    Search Job
+                </div>
+                <div class="fifth-page-orange-button">
+                    Apply Job Now
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sixth-page">
+        <div class="container">
+            <div class="in-sixth-page">
+                <div class="sixth-page-title">
+                    <div style="text-align: left;" class="title">
+                        <h2>Featured Canditates</h2>
+                        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, laboriosam!</span>
+                    </div>
+                    <a style="text-decoration: none;" href="#">Browse All
+                        <i style="padding-left: 10px; padding-top: 110px;" class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+                <div class="sixth-page-boxes">
+                    <div class="box">
+                        <img style="width: 72px;" src="/images/t5.jpg" alt="">
+                        <h3>Darlene Robertson</h3>
+                        <a style="text-decoration: none;" href="#">UI Designer</a>
+                        <div class="icon">
+                            <i style="padding-top: 20px;" class="fa-solid fa-location-dot"></i>
+                            <span style="color: rgba(66, 65, 65, 0.4); padding-right: 0;">London, UK</span>
+                        </div>
+                        <div style="color: white; background: blue;" class="blue-white-button">View Profile</div>
+                    </div>
+                    <div class="box">
+                        <img src="/images/t3.jpg" alt="">
+                        <h3>Wade Warren</h3>
+                        <a style="text-decoration: none;" href="#">Developer</a>
+                        <div class="icon">
+                            <i style="padding-top: 20px;" class="fa-solid fa-location-dot"></i>
+                            <span style="color: rgba(66, 65, 65, 0.4); padding-right: 0;">London, UK</span>
+                        </div>
+                        <div class="blue-white-button">View Profile</div>
+                    </div>
+                    <div class="box">
+                        <img src="/images/t2.jpg" alt="">
+                        <h3>Leslie Alexander</h3>
+                        <a style="text-decoration: none;" href="#">Marketing Expert</a>
+                        <div class="icon">
+                            <i style="padding-top: 20px;" class="fa-solid fa-location-dot"></i>
+                            <span style="color: rgba(66, 65, 65, 0.4); padding-right: 0;">London, UK</span>
+                        </div>
+                        <div class="blue-white-button">View Profile</div>
+                    </div>
+                    <div class="box">
+                        <img style="width: 72px;" src="/images/t4.jpg" alt="">
+                        <h3>Floyd Miles</h3>
+                        <a style="text-decoration: none;" href="#">Chartes Accountant</a>
+                        <div class="icon">
+                            <i style="padding-top: 20px;" class="fa-solid fa-location-dot"></i>
+                            <span style="color: rgba(66, 65, 65, 0.4); padding-right: 0;">London, UK</span>
+                        </div>
+                        <div class="blue-white-button">View Profile</div>
+                    </div>
+                </div>
+                <div class="dots">
+                    <i class="fa-solid fa-circle"></i>
+                    <i style="color: black;" class="fa-solid fa-circle"></i>
+                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-solid fa-circle"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="seventh-page">
+        <div class="container">
+            <div class="in-seventh-page">
+                <div style="text-align: center;" class="seventh-page-title">
+                    <h2>Recent News Articles</h2>
+                    <span style="color: rgba(30, 30, 30, 0.5);">Fresh job related news content posted each day.</span>
+                </div>
+                <div class="seventh-page-photos">
+                    <div class="seventh-page-photo">
+                        <img src="/images/blog2-pgyo7eh31sbgzq1fyg6b3tkhjs54fmjm5ulwlqc3o8.jpg" alt="">
+                        <div class="seventh-page-photo-text">
+                            <span>August 31, 2021 <i class="fa-solid fa-circle"></i> 12 Comment</span>
+                        <h3>Attract Sales And Profits</h3>
+                        </div>
+                    </div>
+                    <div class="seventh-page-photo">
+                        <img src="/images/blog1-pgyo7eh31sbgzq1fyg6b3tkhjs54fmjm5ulwlqc3o8.jpg" alt="">
+                        <div class="seventh-page-photo-text">
+                            <span>August 31, 2021 <i class="fa-solid fa-circle"></i> 12 Comment</span>
+                        <h3>Attract Sales And Profits</h3>
+                        </div>
+                    </div>
+                    <div class="seventh-page-photo">
+                        <img src="/images/blog3-pgyo7eh31sbgzq1fyg6b3tkhjs54fmjm5ulwlqc3o8.jpg" alt="">
+                        <div class="seventh-page-photo-text">
+                            <span>August 31, 2021 <i class="fa-solid fa-circle"></i> 12 Comment</span>
+                        <h3>Attract Sales And Profits</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background: rgba(212, 231, 248, 0.708);" class="eighth-page">
+        <div class="container">
+            <div class="in-eighth-page">
+                <div style="padding-bottom: 70px;" class="eighth-page-title">
+                    <h2>Let employers find you</h2>
+                    <span style="color: rgba(30, 30, 30, 0.5);">Advertise your jobs to million of monthly users and search 15.8 millionCVs in our database.</span>
+                </div>
+                <div class="eighth-page-button">
+                    <div style="background: blue; color: white; margin-top: 100px;" class="blue-white-button">
+                        Upload Your CV
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
